@@ -2,7 +2,6 @@ const download = require('download');
 const Progress = require('progress');
 const fs = require('fs-extra');
 const cp = require('child_process');
-const os = require('os');
 
 
 // Global variables.
@@ -25,8 +24,8 @@ const OPTIONS = {
 };
 
 
-// Check if a command exists.
-function cmdExists(txt) {
+// Run a command, return true if success.
+function cpRun(txt) {
   try { cp.execSync(txt); }
   catch(e) { return false; }
   return true;
@@ -54,13 +53,14 @@ function edownload(url, dst, opt) {
 // Setup "youtubeuploader".
 async function setup() {
   fs.unlinkSync('youtubeuploader');
-  if(cmdExists('youtubeuploader')) {
+  if(cpRun('youtubeuploader')) {
     console.log('setup: youtubeuploader already exists.');
     // return fs.removeSync('.');
   }
   var url = downloadUrl();
   console.log(`setup: Downloading ${url} ...`);
   await edownload(url, {extract: true});
+  cpRun('chmod +x youtubeuploader*');
   // fs.removeSync('node_modules');
 };
 setup();
