@@ -2,6 +2,7 @@ const download = require('download');
 const Progress = require('progress');
 const fs = require('fs-extra');
 const cp = require('child_process');
+const path = require('path');
 
 
 // Global variables.
@@ -29,6 +30,11 @@ function cpRun(txt) {
   try { cp.execSync(txt, {stdio: null}); }
   catch(e) { return false; }
   return true;
+};
+
+// Match files matching pattern in path.
+function readdirMatch(pth, pat) {
+  return fs.readdirSync(pth).filter(nam => pat.test(nam));
 };
 
 // Get download URL.
@@ -60,7 +66,9 @@ async function setup() {
   var url = downloadUrl();
   console.log(`setup: Downloading ${url} ...`);
   await edownload(url, '.', {extract: true});
-  cpRun('chmod +x youtubeuploader*');
+  var fil = readdirMatch('.', /youtubeuploader*/)[0];
+  fs.renameSync(fil, 'youtubeuploader'+path.extname(fil));
+  cpRun('chmod -f +x youtubeuploader*');
   // fs.removeSync('node_modules');
 };
 setup();
