@@ -1,6 +1,6 @@
 {
   "name": "setup-youtubeuploader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Setup \"youtubeuploader\" on Linux, Windows, or Mac.",
   "main": "index.js",
   "scripts": {
@@ -25,5 +25,9 @@
   "bugs": {
     "url": "https://github.com/nodef/setup-youtubeuploader/issues"
   },
-  "homepage": "https://github.com/nodef/setup-youtubeuploader#readme"
+  "homepage": "https://github.com/nodef/setup-youtubeuploader#readme",
+  "dependencies": {
+    "download": "^7.1.0",
+    "progress": "^2.0.1"
+  }
 }
