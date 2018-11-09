@@ -66,7 +66,7 @@ async function setup() {
   var url = downloadUrl();
   console.log(`setup: Downloading ${url} ...`);
   await edownload(url, '.', {extract: true});
-  var fil = readdirMatch('.', /youtubeuploader*/)[0];
+  var fil = readdirMatch('.', /youtubeuploader.*/)[0];
   fs.renameSync(fil, 'youtubeuploader'+path.extname(fil));
   cpRun('chmod -f +x youtubeuploader*');
   fs.removeSync('node_modules');

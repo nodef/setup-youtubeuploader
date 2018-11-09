@@ -1,12 +1,15 @@
 {
   "name": "setup-youtubeuploader",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Setup \"youtubeuploader\" on Linux, Windows, or Mac.",
   "main": "index.js",
   "preferGlobal": true,
-  "bin": "youtubeuploader",
+  "bin": {
+    "youtubeuploader": "youtubeuploader"
+  },
   "scripts": {
     "install": "node install",
+    "uninstall": "node uninstall",
     "test": "exit"
   },
   "repository": {
