@@ -26,7 +26,7 @@ const OPTIONS = {
 
 // Run a command, return true if success.
 function cpRun(txt) {
-  try { cp.execSync(txt); }
+  try { cp.execSync(txt, {stdio: null}); }
   catch(e) { return false; }
   return true;
 };
@@ -52,14 +52,14 @@ function edownload(url, dst, opt) {
 
 // Setup "youtubeuploader".
 async function setup() {
-  fs.unlinkSync('youtubeuploader');
-  if(cpRun('youtubeuploader')) {
+  fs.removeSync('youtubeuploader');
+  if(cpRun('youtubeuploader -v')) {
     console.log('setup: youtubeuploader already exists.');
-    // return fs.removeSync('.');
+    return; // return fs.removeSync('.');
   }
   var url = downloadUrl();
   console.log(`setup: Downloading ${url} ...`);
-  await edownload(url, {extract: true});
+  await edownload(url, '.', {extract: true});
   cpRun('chmod +x youtubeuploader*');
   // fs.removeSync('node_modules');
 };

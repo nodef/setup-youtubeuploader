@@ -1,6 +1,6 @@
 {
   "name": "setup-youtubeuploader",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Setup \"youtubeuploader\" on Linux, Windows, or Mac.",
   "main": "index.js",
   "preferGlobal": true,

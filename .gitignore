@@ -1,3 +1,6 @@
+# Executable files
+*.exe
+
 # Logs
 logs
 *.log
