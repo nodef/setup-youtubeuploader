@@ -64,7 +64,7 @@ async function setup() {
     return fs.removeSync('.');
   }
   var url = downloadUrl();
-  console.log(`setup: Downloading ${url} ...`);
+  console.log(`setup: Downloading ${url}`);
   await edownload(url, '.', {extract: true});
   var fil = readdirMatch('.', /youtubeuploader.*/)[0];
   fs.renameSync(fil, 'youtubeuploader'+path.extname(fil));
