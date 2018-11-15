@@ -6,8 +6,8 @@ const path = require('path');
 
 
 // Global variables.
-const RELEASE = '18.14';
-const URLPREFIX = 'https://github.com/porjo/youtubeuploader/releases/download';
+const RELEASE = '19.1';
+const URLPREFIX = 'https://github.com/golangf/youtubeuploader/releases/download';
 const ARCH = {
   arm: 'armv7',
   x64: 'amd64'
@@ -59,7 +59,7 @@ function edownload(url, dst, opt) {
 // Setup "youtubeuploader".
 async function setup() {
   fs.removeSync('youtubeuploader');
-  if(cpRun('youtubeuploader -v')) {
+  if(cpRun('youtubeuploader --version')) {
     console.log('setup: youtubeuploader already exists.');
     return fs.removeSync('.');
   }

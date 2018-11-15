@@ -7,11 +7,11 @@ Setup ["youtubeuploader"] on Linux, Windows, or Mac.
 npm install -g setup-youtubeuploader
 
 # check version
-youtubeuploader -v
+youtubeuploader --version
 ```
 
 
-[![Merferry](https://i.imgur.com/SMCr1aO.jpg)](https://merferry.github.io)
+[![nodef](https://i.imgur.com/SMCr1aO.jpg)](https://nodef.github.io)
 
-["youtubeuploader"]: https://github.com/porjo/youtubeuploader
+["youtubeuploader"]: https://github.com/golangf/youtubeuploader
 [extra-youtubeuploader]: https://www.npmjs.com/package/extra-youtubeuploader
