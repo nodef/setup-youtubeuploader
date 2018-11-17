@@ -6,7 +6,7 @@ const path = require('path');
 
 
 // Global variables.
-const RELEASE = '19.1';
+const RELEASE = '19.2';
 const URLPREFIX = 'https://github.com/golangf/youtubeuploader/releases/download';
 const ARCH = {
   arm: 'armv7',
