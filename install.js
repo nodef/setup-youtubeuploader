@@ -6,7 +6,7 @@ const path = require('path');
 
 
 // Global variables.
-const RELEASE = '19.6';
+const RELEASE = '19.6.1';
 const URLPREFIX = 'https://github.com/golangf/youtubeuploader/releases/download';
 const ARCH = {
   arm: 'armv7',
@@ -41,8 +41,7 @@ function readdirMatch(pth, pat) {
 function downloadUrl() {
   var arch = ARCH[process.arch]||process.arch;
   var platform = PLATFORM[process.platform]||'linux';
-  var ext = platform!=='linux'? '.zip':'.gz';
-  return `${URLPREFIX}/${RELEASE}/youtubeuploader_${platform}_${arch}${ext}`;
+  return `${URLPREFIX}/${RELEASE}/youtubeuploader_${platform}_${arch}.zip`;
 };
 
 // Download and extract files (with progress).

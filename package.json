@@ -1,6 +1,6 @@
 {
   "name": "setup-youtubeuploader",
-  "version": "19.6.0",
+  "version": "19.6.1",
   "description": "Setup \"youtubeuploader\" on Linux, Windows, or Mac.",
   "main": "index.js",
   "preferGlobal": true,
@@ -33,8 +33,8 @@
   },
   "homepage": "https://github.com/nodef/setup-youtubeuploader#readme",
   "dependencies": {
-    "download": "^7.1.0",
-    "fs-extra": "^7.0.1",
-    "progress": "^2.0.1"
+    "download": "^8.0.0",
+    "fs-extra": "^9.0.1",
+    "progress": "^2.0.3"
   }
 }
